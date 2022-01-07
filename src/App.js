@@ -17,7 +17,7 @@ function App() {
           <Route path="/quiz/:quizname">
             <Quiz username={username} />
           </Route>
-          <Route path="/leaderboard">
+          <Route path="/leaderboard/:quizname">
             <Leaderboard username={username} />
           </Route>
           <Route path="/">
