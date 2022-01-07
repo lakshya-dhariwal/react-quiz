@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function QuizArea({
+  quizname,
   quiz,
   score,
   setScore,
@@ -43,7 +44,7 @@ function QuizArea({
       } else {
         setTimeout(() => {
           setCurrentQuestion(currentQuestion + 1);
-        }, 1750);
+        }, 1250);
       }
     }
   }, [answered]);
@@ -70,7 +71,7 @@ function QuizArea({
             return (
               <div
                 key={index}
-                className="options bg-indigo-900 m-2 p-2 px-5 w-48 rounded-3xl cursor-pointer border "
+                className="options bg-indigo-900  hover:bg-blue-700 m-2 p-2 px-5 w-48 rounded-3xl cursor-pointer border "
                 onClick={optionClickHandler}
               >
                 <h3>{`${a}`}</h3>
@@ -79,11 +80,15 @@ function QuizArea({
           })}
         </div>
       </div>
-      <Link to="/leaderboard">
-        <button className="bg-blue-700 m-2 p-2 px-5 w-48 rounded-3xl cursor-pointer border">
-          Submit
-        </button>
-      </Link>
+      {isComplete ? (
+        <Link to={`/leaderboard/${quizname}`}>
+          <button className="bg-blue-700 m-2 p-2 px-5 w-48 rounded-3xl cursor-pointer border">
+            Submit Quiz
+          </button>
+        </Link>
+      ) : (
+        " "
+      )}
     </>
   );
 }

@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 function App() {
   const [username, setUsername] = useState("Guest");
   return (
-    <div className="App  h-screen bg-slate-900 text-slate-200">
+    <div className="App  min-h-screen bg-slate-900 text-slate-200">
       <BrowserRouter>
         <Nav username={username} />
         <Switch>

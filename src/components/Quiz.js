@@ -26,6 +26,7 @@ function Quiz() {
         </h3>
       </div>
       <QuizArea
+        quizname={quizname}
         quiz={currentQuiz.questions[currentQuestion]}
         score={score}
         setScore={setScore}
